@@ -4,9 +4,9 @@ class TodoItem extends Component {
     state = {}
     render() {
         return (
-            <div>
+            <h3>
                 TodoItem
-            </div>
+            </h3>
         );
     }
 }
