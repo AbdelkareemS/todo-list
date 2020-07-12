@@ -9,11 +9,7 @@ class App extends Component {
     items: [
       {
         id: 1,
-        title: 'wake up'
-      },
-      {
-        id: 2,
-        title: 'breakfast'
+        title: "new todo",
       }
     ],
     id: uuid(),
@@ -57,7 +53,15 @@ class App extends Component {
   }
 
   handleEdit = (id) => {
-    // console.log(`handleEdit ${id}`);
+    const filterdItems = this.state.items.filter(item => item.id !== id);
+    const selectedItem = this.state.items.find(item => item.id === id);
+    this.setState({
+      items: filterdItems,
+      id: id,
+      item: selectedItem.title,
+      editItem: true
+    });
+
   }
 
   render() {

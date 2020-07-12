@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 
 class TodoList extends Component {
-    state = {}
     render() {
         const { items, clearList, deleteItem, handleEdit } = this.props;
         return (
