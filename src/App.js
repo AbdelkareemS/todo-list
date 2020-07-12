@@ -43,15 +43,21 @@ class App extends Component {
   }
 
   clearList = () => {
-    console.log('clearList');
+    this.setState({
+      items: [],
+    })
   }
 
   deleteItem = (id) => {
-    console.log(`Delete Specific Item ${id}`);
+    const todos = this.state.items;
+    const deletedTodo = todos.filter(todo => todo.id !== id);
+    this.setState({
+      items: deletedTodo,
+    })
   }
 
   handleEdit = (id) => {
-    console.log(`handleEdit ${id}`);
+    // console.log(`handleEdit ${id}`);
   }
 
   render() {
