@@ -22,11 +22,24 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    console.log('handle change');
+    this.setState({
+      item: e.target.value,
+    })
   }
 
   handleSubmit = (e) => {
-    console.log('handle Submit');
+    e.preventDefault();
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item
+    }
+    const updatedItems = [...this.state.items, newItem]
+    this.setState({
+      items: updatedItems,
+      item: '',
+      id: uuid(),
+      editItem: false,
+    })
   }
 
   clearList = () => {
